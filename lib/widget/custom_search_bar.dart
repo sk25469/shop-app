@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomSearchBar extends StatefulWidget {
-  CustomSearchBar({Key? key}) : super(key: key);
+  const CustomSearchBar({Key? key}) : super(key: key);
 
   @override
   _CustomSearchBarState createState() => _CustomSearchBarState();
@@ -17,19 +17,20 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.only(left: 8.0),
             child: Icon(
               Icons.search,
               color: Colors.white,
+              size: 30,
             ),
           ),
           SizedBox(
-            width: _deviceWidth * 0.75,
-            height: 55,
+            width: _deviceWidth * 0.78,
+            height: 60,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                style: const TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 18),
                 textAlignVertical: TextAlignVertical.bottom,
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
@@ -37,7 +38,9 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   filled: true,
-                  hintStyle: const TextStyle(color: Colors.grey),
+                  hintStyle: const TextStyle(
+                    color: Colors.grey,
+                  ),
                   hintText: "Search",
                   fillColor: const Color.fromRGBO(35, 31, 32, 1),
                 ),
@@ -49,6 +52,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             icon: const Icon(
               Icons.filter_list,
               color: Colors.white,
+              size: 30,
             ),
           )
         ],
