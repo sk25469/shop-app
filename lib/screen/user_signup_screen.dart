@@ -1,3 +1,5 @@
+import 'package:app_shop/screen/bottom_navigation.dart';
+import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/user_login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -185,7 +187,10 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                 alignment: Alignment.centerLeft,
                 child: const Text(
                   'Confirm Password',
-                  style: TextStyle(color: Colors.white, fontSize: 19),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 19,
+                  ),
                 ),
               ),
               Padding(
@@ -214,7 +219,10 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                   right: 20,
                 ),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(BottomNavigationScreen.routeName);
+                  },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50.0),
                   ),

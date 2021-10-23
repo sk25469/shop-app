@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:app_shop/screen/bottom_navigation.dart';
+import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/user_login_screen.dart';
 import 'package:app_shop/screen/user_signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -35,8 +37,10 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => const UserSignupScreen(),
-        UserLoginScreen.routeName: (context) => UserLoginScreen(),
+        BottomNavigationScreen.routeName: (context) => BottomNavigationScreen(),
+        UserLoginScreen.routeName: (context) => const UserLoginScreen(),
         UserSignupScreen.routeName: (context) => const UserSignupScreen(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
       },
     );
   }

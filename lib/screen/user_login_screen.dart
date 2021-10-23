@@ -1,3 +1,4 @@
+import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/user_signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -154,7 +155,9 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                   right: 20,
                 ),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+                  },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50.0),
                   ),
