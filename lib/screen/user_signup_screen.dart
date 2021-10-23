@@ -65,8 +65,11 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                             Radius.circular(20),
                           ),
                         ),
-                        child: Image.asset(
-                          'assets/images/google.png',
+                        child: Transform.scale(
+                          scale: 0.6,
+                          child: Image.asset(
+                            'assets/images/google.png',
+                          ),
                         ),
                       ),
                     ),
@@ -84,8 +87,11 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                             Radius.circular(20),
                           ),
                         ),
-                        child: Image.asset(
-                          'assets/images/fb.png',
+                        child: Transform.scale(
+                          scale: 0.6,
+                          child: Image.asset(
+                            'assets/images/fb.png',
+                          ),
                         ),
                       ),
                     ),
