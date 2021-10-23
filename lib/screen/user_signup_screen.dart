@@ -15,6 +15,7 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
     TextEditingController? _nameTextController;
     TextEditingController? _emailTextController;
     TextEditingController? _passwordTextController;
+    TextEditingController? _confirmPasswordTextController;
 
     var deviceWidth = MediaQuery.of(context).size.width;
     var textTheme = Theme.of(context).textTheme;
@@ -190,6 +191,7 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20),
                 child: TextField(
+                  controller: _confirmPasswordTextController,
                   obscureText: true,
                   enableSuggestions: false,
                   autocorrect: false,

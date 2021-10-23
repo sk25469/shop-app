@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 
 class UserLoginScreen extends StatefulWidget {
   static const routeName = '/login-screen';
-  UserLoginScreen({Key? key}) : super(key: key);
+  const UserLoginScreen({Key? key}) : super(key: key);
 
   @override
   _UserLoginScreenState createState() => _UserLoginScreenState();
 }
 
 class _UserLoginScreenState extends State<UserLoginScreen> {
+  TextEditingController? _emailTextController;
+  TextEditingController? _passwordTextController;
+
   @override
   Widget build(BuildContext context) {
     var deviceWidth = MediaQuery.of(context).size.width;
@@ -100,6 +103,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20),
                 child: TextField(
+                  controller: _emailTextController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -127,6 +131,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20),
                 child: TextField(
+                  controller: _passwordTextController,
                   obscureText: true,
                   enableSuggestions: false,
                   autocorrect: false,
