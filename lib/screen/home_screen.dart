@@ -1,8 +1,8 @@
-import 'dart:ui';
-
 import 'package:app_shop/demo_data.dart';
-import 'package:app_shop/widget/choice_option.dart';
+import 'package:app_shop/model/Product.dart';
 import 'package:app_shop/widget/custom_search_bar.dart';
+import 'package:app_shop/widget/item_card.dart';
+import 'package:app_shop/widget/see_more_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Product> _products = Demo.products;
     return SafeArea(
       child: Column(
         children: [
@@ -39,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(
-                    Icons.shopping_bag_outlined,
+                    Icons.shopping_cart_rounded,
                     color: Colors.white,
                     size: 35,
                   ),
@@ -49,21 +50,123 @@ class HomeScreen extends StatelessWidget {
           ),
           const CustomSearchBar(),
           Expanded(
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'Food',
-                    style: TextStyle(
-                      fontSize: 28,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'Food',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 5.0,
+                      right: 5,
+                    ),
+                    child: SizedBox(
+                      height: 200,
+                      width: double.infinity,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (ctx, index) {
+                          return index == _products.length
+                              ? const SeeMoreButton()
+                              : InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ItemCard(product: _products[index]),
+                                  ),
+                                );
+                        },
+                        itemCount: _products.length + 1,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'Medicine',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 5.0,
+                      right: 5,
+                    ),
+                    child: SizedBox(
+                      height: 200,
+                      width: double.infinity,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (ctx, index) {
+                          return index == _products.length
+                              ? const SeeMoreButton()
+                              : InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ItemCard(product: _products[index]),
+                                  ),
+                                );
+                        },
+                        itemCount: _products.length + 1,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'Grocery',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 5.0,
+                      right: 5,
+                    ),
+                    child: SizedBox(
+                      height: 200,
+                      width: double.infinity,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (ctx, index) {
+                          return index == _products.length
+                              ? const SeeMoreButton()
+                              : InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: ItemCard(product: _products[index]),
+                                  ),
+                                );
+                        },
+                        itemCount: _products.length + 1,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

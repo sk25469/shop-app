@@ -20,19 +20,22 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         textTheme: const TextTheme(
-          headline1: TextStyle(color: Colors.white),
-          headline2: TextStyle(color: Colors.white),
-          headline3: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 40,
-          ),
-          headline4: TextStyle(color: Colors.white),
-          headline5: TextStyle(color: Colors.white),
-          subtitle1: TextStyle(color: Colors.grey),
-          subtitle2: TextStyle(color: Colors.white),
-          bodyText1: TextStyle(color: Colors.white),
-        ),
+            headline1: TextStyle(color: Colors.white),
+            headline2: TextStyle(color: Colors.white),
+            headline3: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 40,
+            ),
+            headline4: TextStyle(color: Colors.white),
+            headline5: TextStyle(color: Colors.white),
+            subtitle1: TextStyle(color: Colors.grey),
+            subtitle2: TextStyle(color: Colors.white),
+            bodyText1: TextStyle(color: Colors.white),
+            button: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+            )),
         scaffoldBackgroundColor: Colors.black,
       ),
       routes: {

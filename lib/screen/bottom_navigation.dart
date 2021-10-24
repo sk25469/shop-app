@@ -4,8 +4,6 @@ import 'package:app_shop/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:titled_navigation_bar/titled_navigation_bar.dart';
 
-import './favourite_screen.dart';
-
 class BottomNavigationScreen extends StatefulWidget {
   static const routeName = '/bottom-nav-screen';
   BottomNavigationScreen({Key? key}) : super(key: key);
@@ -27,10 +25,6 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     {
       'page': const HomeScreen(),
       'title': 'Shop App',
-    },
-    {
-      'page': const FavouriteScreen(),
-      'title': 'Favourite Screen',
     },
     {
       'page': const CartScreen(),
@@ -56,11 +50,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
             title: const Text('Home'),
           ),
           TitledNavigationBarItem(
-            icon: const Icon(Icons.favorite_outlined),
-            title: const Text('Favourite'),
-          ),
-          TitledNavigationBarItem(
-            icon: const Icon(Icons.shopping_cart_outlined),
+            icon: const Icon(Icons.shopping_cart_rounded),
             title: const Text('Cart'),
           ),
           TitledNavigationBarItem(
