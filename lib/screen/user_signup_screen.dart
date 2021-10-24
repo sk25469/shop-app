@@ -1,5 +1,4 @@
 import 'package:app_shop/screen/bottom_navigation.dart';
-import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/user_login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -105,9 +104,9 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                   bottom: 10,
                 ),
                 alignment: Alignment.centerLeft,
-                child: const Text(
+                child: Text(
                   'Name',
-                  style: TextStyle(color: Colors.white, fontSize: 19),
+                  style: textTheme.headline6,
                 ),
               ),
               Padding(
@@ -133,9 +132,9 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                   bottom: 10,
                 ),
                 alignment: Alignment.centerLeft,
-                child: const Text(
+                child: Text(
                   'Email',
-                  style: TextStyle(color: Colors.white, fontSize: 19),
+                  style: textTheme.headline6,
                 ),
               ),
               Padding(
@@ -161,9 +160,9 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                   bottom: 10,
                 ),
                 alignment: Alignment.centerLeft,
-                child: const Text(
+                child: Text(
                   'Password',
-                  style: TextStyle(color: Colors.white, fontSize: 19),
+                  style: textTheme.headline6,
                 ),
               ),
               Padding(
@@ -191,12 +190,9 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                   bottom: 10,
                 ),
                 alignment: Alignment.centerLeft,
-                child: const Text(
+                child: Text(
                   'Confirm Password',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 19,
-                  ),
+                  style: textTheme.headline6,
                 ),
               ),
               Padding(
@@ -245,8 +241,9 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                     child: Container(
                       height: 50,
                       constraints: const BoxConstraints(
-                          minWidth: 88.0,
-                          minHeight: 36.0), // min sizes for Material buttons
+                        minWidth: 88.0,
+                        minHeight: 36.0,
+                      ), // min sizes for Material buttons
                       alignment: Alignment.center,
                       child: const Text(
                         'Create an account',
@@ -267,10 +264,7 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                   children: [
                     Text(
                       'Already have an account?',
-                      style: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 15,
-                      ),
+                      style: textTheme.subtitle1,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
@@ -283,7 +277,7 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                           'Log in',
                           style: TextStyle(
                             color: Color.fromRGBO(253, 254, 255, 1),
-                            fontSize: 15,
+                            fontSize: 16,
                             decoration: TextDecoration.underline,
                           ),
                         ),

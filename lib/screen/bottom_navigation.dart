@@ -1,4 +1,5 @@
-import 'package:app_shop/screen/cart_screen.dart';
+import 'package:app_shop/screen/food_screen.dart';
+import 'package:app_shop/screen/medicine_screen.dart';
 import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +28,12 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       'title': 'Shop App',
     },
     {
-      'page': const CartScreen(),
-      'title': 'Cart Screen',
+      'page': const FoodScreen(),
+      'title': 'Food Screen',
+    },
+    {
+      'page': const MedicineScreen(),
+      'title': 'Medicine Screen',
     },
     {
       'page': ProfileScreen(),
@@ -38,20 +43,38 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bool keyboardIsOpen = MediaQuery.of(context).viewInsets.bottom != 0;
     return Scaffold(
       body: _pages[_selectedPageIndex]['page'] as Widget,
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
+      floatingActionButton: Visibility(
+        visible: !keyboardIsOpen,
+        child: FloatingActionButton(
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.purple,
+          onPressed: () {},
+          child: const Icon(Icons.shopping_cart_outlined),
+          highlightElevation: 10,
+        ),
+      ),
       bottomNavigationBar: TitledBottomNavigationBar(
         onTap: _selectPage,
         curve: Curves.bounceInOut,
         currentIndex: _selectedPageIndex,
+        reverse: true,
+        inactiveColor: Colors.black,
         items: [
           TitledNavigationBarItem(
             icon: const Icon(Icons.home),
             title: const Text('Home'),
           ),
           TitledNavigationBarItem(
-            icon: const Icon(Icons.shopping_cart_rounded),
-            title: const Text('Cart'),
+            icon: const Icon(Icons.fastfood),
+            title: const Text('Food'),
+          ),
+          TitledNavigationBarItem(
+            icon: const Icon(Icons.medication),
+            title: const Text('Medicine'),
           ),
           TitledNavigationBarItem(
             icon: const Icon(Icons.account_circle_outlined),

@@ -1,3 +1,4 @@
+import 'package:app_shop/screen/bottom_navigation.dart';
 import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/user_signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -162,7 +163,8 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                 ),
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+                    Navigator.of(context)
+                        .pushReplacementNamed(BottomNavigationScreen.routeName);
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50.0),
