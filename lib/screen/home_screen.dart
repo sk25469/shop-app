@@ -1,9 +1,11 @@
 import 'package:app_shop/demo_data.dart';
 import 'package:app_shop/model/Product.dart';
+import 'package:app_shop/screen/cart_screen.dart';
 import 'package:app_shop/widget/custom_search_bar.dart';
 import 'package:app_shop/widget/item_card.dart';
 import 'package:app_shop/widget/see_more_button.dart';
 import 'package:flutter/material.dart';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home-screen';
@@ -13,9 +15,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Product> _products = Demo.products;
 
-    for (int i = 0; i < _products.length; i++) {
-      print(_products[i].toString());
-    }
+    // for (int i = 0; i < _products.length; i++) {
+    //   print(_products[i].toString());
+    // }
     return SafeArea(
       child: Column(
         children: [
@@ -42,7 +44,9 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(CartScreen.routeName);
+                  },
                   icon: const Icon(
                     Icons.shopping_cart_rounded,
                     color: Colors.white,
@@ -91,6 +95,9 @@ class HomeScreen extends StatelessWidget {
                         itemCount: _products.length + 1,
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 500,
                   ),
                   // Container(
                   //   padding: const EdgeInsets.all(10),

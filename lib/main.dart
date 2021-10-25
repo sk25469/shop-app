@@ -1,4 +1,5 @@
 import 'package:app_shop/screen/bottom_navigation.dart';
+import 'package:app_shop/screen/cart_screen.dart';
 import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/user_login_screen.dart';
 import 'package:app_shop/screen/user_signup_screen.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         UserLoginScreen.routeName: (context) => const UserLoginScreen(),
         UserSignupScreen.routeName: (context) => const UserSignupScreen(),
         HomeScreen.routeName: (context) => const HomeScreen(),
+        CartScreen.routeName: (context) => const CartScreen(),
         // ProductDetailScreen.routeName: (context) => ProductDetailScreen(Demo.products[0]),
       },
     );

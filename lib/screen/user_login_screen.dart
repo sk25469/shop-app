@@ -221,7 +221,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                           'Sign up',
                           style: TextStyle(
                             color: Color.fromRGBO(253, 254, 255, 1),
-                            fontSize: 15,
+                            fontSize: 16,
                             decoration: TextDecoration.underline,
                           ),
                         ),

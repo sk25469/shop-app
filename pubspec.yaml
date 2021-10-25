@@ -36,6 +36,7 @@ dependencies:
   titled_navigation_bar: ^5.0.0-nullsafety.0
   json_theme: ^3.0.1
   uuid: 3.0.5
+  liquid_pull_to_refresh: ^3.0.0
 
 dev_dependencies:
   flutter_test:

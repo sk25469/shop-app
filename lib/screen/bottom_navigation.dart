@@ -1,3 +1,4 @@
+import 'package:app_shop/screen/cart_screen.dart';
 import 'package:app_shop/screen/food_screen.dart';
 import 'package:app_shop/screen/medicine_screen.dart';
 import 'package:app_shop/screen/home_screen.dart';
@@ -52,7 +53,9 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         child: FloatingActionButton(
           foregroundColor: Colors.white,
           backgroundColor: Colors.purple,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed(CartScreen.routeName);
+          },
           child: const Icon(Icons.shopping_cart_outlined),
           highlightElevation: 10,
         ),
