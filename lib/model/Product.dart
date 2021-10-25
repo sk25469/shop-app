@@ -2,7 +2,7 @@ class Product {
   final String title;
   final String imageUrl;
   final double price;
-  final DateTime id;
+  final String id;
 
   Product({
     required this.title,
@@ -10,4 +10,11 @@ class Product {
     required this.price,
     required this.id,
   });
+
+  @override
+  String toString() {
+    print('Title : $title');
+    print('Title : $id');
+    return super.toString();
+  }
 }

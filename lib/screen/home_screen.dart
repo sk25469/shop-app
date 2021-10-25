@@ -12,6 +12,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Product> _products = Demo.products;
+
+    for (int i = 0; i < _products.length; i++) {
+      print(_products[i].toString());
+    }
     return SafeArea(
       child: Column(
         children: [
@@ -79,92 +83,95 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: (ctx, index) {
                           return index == _products.length
                               ? const SeeMoreButton()
-                              : InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: ItemCard(product: _products[index]),
-                                  ),
+                              : Container(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: ItemCard(product: _products[index]),
                                 );
                         },
                         itemCount: _products.length + 1,
                       ),
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    alignment: Alignment.centerLeft,
-                    child: const Text(
-                      'Medicine',
-                      style: TextStyle(
-                        fontSize: 28,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 5.0,
-                      right: 5,
-                    ),
-                    child: SizedBox(
-                      height: 200,
-                      width: double.infinity,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (ctx, index) {
-                          return index == _products.length
-                              ? const SeeMoreButton()
-                              : InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: ItemCard(product: _products[index]),
-                                  ),
-                                );
-                        },
-                        itemCount: _products.length + 1,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    alignment: Alignment.centerLeft,
-                    child: const Text(
-                      'Grocery',
-                      style: TextStyle(
-                        fontSize: 28,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 5.0,
-                      right: 5,
-                    ),
-                    child: SizedBox(
-                      height: 200,
-                      width: double.infinity,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (ctx, index) {
-                          return index == _products.length
-                              ? const SeeMoreButton()
-                              : InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: ItemCard(product: _products[index]),
-                                  ),
-                                );
-                        },
-                        itemCount: _products.length + 1,
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   padding: const EdgeInsets.all(10),
+                  //   alignment: Alignment.centerLeft,
+                  //   child: const Text(
+                  //     'Medicine',
+                  //     style: TextStyle(
+                  //       fontSize: 28,
+                  //       color: Colors.white,
+                  //       fontWeight: FontWeight.bold,
+                  //     ),
+                  //   ),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(
+                  //     left: 5.0,
+                  //     right: 5,
+                  //   ),
+                  //   child: SizedBox(
+                  //     height: 200,
+                  //     width: double.infinity,
+                  //     child: ListView.builder(
+                  //       scrollDirection: Axis.horizontal,
+                  //       itemBuilder: (ctx, index) {
+                  //         return index == _products.length
+                  //             ? const SeeMoreButton()
+                  //             : InkWell(
+                  //                 onTap: () {
+                  //                   Navigator.of(context)
+                  //                       .pushNamed(ProductDetailScreen.routeName);
+                  //                 },
+                  //                 child: Container(
+                  //                   padding: const EdgeInsets.all(8.0),
+                  //                   child: ItemCard(product: _products[index]),
+                  //                 ),
+                  //               );
+                  //       },
+                  //       itemCount: _products.length + 1,
+                  //     ),
+                  //   ),
+                  // ),
+                  // Container(
+                  //   padding: const EdgeInsets.all(10),
+                  //   alignment: Alignment.centerLeft,
+                  //   child: const Text(
+                  //     'Grocery',
+                  //     style: TextStyle(
+                  //       fontSize: 28,
+                  //       color: Colors.white,
+                  //       fontWeight: FontWeight.bold,
+                  //     ),
+                  //   ),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(
+                  //     left: 5.0,
+                  //     right: 5,
+                  //   ),
+                  //   child: SizedBox(
+                  //     height: 200,
+                  //     width: double.infinity,
+                  //     child: ListView.builder(
+                  //       scrollDirection: Axis.horizontal,
+                  //       itemBuilder: (ctx, index) {
+                  //         return index == _products.length
+                  //             ? const SeeMoreButton()
+                  //             : InkWell(
+                  //                 onTap: () {
+                  //                   Navigator.of(context)
+                  //                       .pushNamed(ProductDetailScreen.routeName);
+                  //                 },
+                  //                 child: Container(
+                  //                   padding: const EdgeInsets.all(8.0),
+                  //                   child: ItemCard(product: _products[index]),
+                  //                 ),
+                  //               );
+                  //       },
+                  //       itemCount: _products.length + 1,
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),

@@ -36,7 +36,7 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                       "Sign up",
                       style: textTheme.headline3,
                     ),
-                  )
+                  ),
                 ],
               ),
               const SizedBox(height: 40),
@@ -203,6 +203,7 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                   enableSuggestions: false,
                   autocorrect: false,
                   decoration: InputDecoration(
+                    focusColor: Colors.purple,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(13),
                     ),
@@ -264,7 +265,10 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                   children: [
                     Text(
                       'Already have an account?',
-                      style: textTheme.subtitle1,
+                      style: TextStyle(
+                        color: Colors.grey[400],
+                        fontSize: 15,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),

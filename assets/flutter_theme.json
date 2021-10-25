@@ -218,10 +218,10 @@
   "indicatorColor": "#ff9c27b0",
   "inputDecorationTheme": {
     "alignLabelWithHint": true,
-    "fillColor": "#0afafafb",
+    "fillColor": "#9fe040fb",
     "filled": false,
     "floatingLabelBehavior": "auto",
-    "focusColor": "#1f0a0a0a",
+    "focusColor": "#5ae040fb",
     "isCollapsed": false,
     "isDense": false
   },
@@ -277,15 +277,15 @@
   },
   "platform": "windows",
   "primaryColor": "#ff9c27b0",
-  "primaryColorBrightness": "dark",
+  "primaryColorBrightness": "light",
   "primaryColorDark": "#ff7d1f8d",
   "primaryColorLight": "#ffc47dd0",
   "primaryIconTheme": {
-    "color": "#ffffffff"
+    "color": "#ff000000"
   },
   "primaryTextTheme": {
     "bodyText1": {
-      "color": "#ffffffff",
+      "color": "#dd000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w400",
@@ -295,7 +295,7 @@
       "textBaseline": "alphabetic"
     },
     "bodyText2": {
-      "color": "#ffffffff",
+      "color": "#dd000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w400",
@@ -305,7 +305,7 @@
       "textBaseline": "alphabetic"
     },
     "button": {
-      "color": "#ffffffff",
+      "color": "#dd000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w500",
@@ -315,7 +315,7 @@
       "textBaseline": "alphabetic"
     },
     "caption": {
-      "color": "#b3ffffff",
+      "color": "#8a000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w400",
@@ -325,7 +325,7 @@
       "textBaseline": "alphabetic"
     },
     "headline1": {
-      "color": "#b3ffffff",
+      "color": "#8a000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w300",
@@ -335,7 +335,7 @@
       "textBaseline": "alphabetic"
     },
     "headline2": {
-      "color": "#b3ffffff",
+      "color": "#8a000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w300",
@@ -345,7 +345,7 @@
       "textBaseline": "alphabetic"
     },
     "headline3": {
-      "color": "#b3ffffff",
+      "color": "#8a000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w400",
@@ -355,7 +355,7 @@
       "textBaseline": "alphabetic"
     },
     "headline4": {
-      "color": "#b3ffffff",
+      "color": "#8a000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w400",
@@ -365,7 +365,7 @@
       "textBaseline": "alphabetic"
     },
     "headline5": {
-      "color": "#ffffffff",
+      "color": "#dd000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w400",
@@ -375,7 +375,7 @@
       "textBaseline": "alphabetic"
     },
     "headline6": {
-      "color": "#ffffffff",
+      "color": "#dd000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w500",
@@ -385,7 +385,7 @@
       "textBaseline": "alphabetic"
     },
     "overline": {
-      "color": "#ffffffff",
+      "color": "#ff000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w400",
@@ -395,7 +395,7 @@
       "textBaseline": "alphabetic"
     },
     "subtitle1": {
-      "color": "#ffffffff",
+      "color": "#dd000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w400",
@@ -405,7 +405,7 @@
       "textBaseline": "alphabetic"
     },
     "subtitle2": {
-      "color": "#ffffffff",
+      "color": "#ff000000",
       "decoration": "none",
       "fontFamily": "Segoe UI",
       "fontWeight": "w500",
@@ -421,7 +421,9 @@
   "shadowColor": "#fffafafb",
   "sliderTheme": {
     "activeTrackColor": "#ffe040fb",
+    "inactiveTickMarkColor": "#8ae040fb",
     "inactiveTrackColor": "#84ea80fc",
+    "overlayColor": "#1fe040fb",
     "thumbColor": "#ff9c27b0"
   },
   "splashColor": "#66c8c8c8",
@@ -437,10 +439,10 @@
         "dragged": "#00fafafb",
         "empty": "#00fafafb",
         "error": "#00fafafb",
-        "focused": "#00fafafb",
+        "focused": "#AB00FAFB",
         "hovered": "#00fafafb",
         "pressed": "#00fafafb",
-        "selected": "#00fafafb"
+        "selected": "#9600FAFB"
       },
       "elevation": {
         "disabled": 0,
@@ -461,6 +463,11 @@
         "hovered": "#fffafafb",
         "pressed": "#fffafafb",
         "selected": "#fffafafb"
+      },
+      "overlayColor": {
+        "focused": "#1fe040fb",
+        "hovered": "#0ae040fb",
+        "pressed": "#1fe040fb"
       }
     }
   },
@@ -531,7 +538,7 @@
       "color": "#fff7f7f7",
       "decoration": "none",
       "fontFamily": "Segoe UI",
-      "fontWeight": "w400",
+      "fontWeight": "w600",
       "fontSize": 48,
       "inherit": true,
       "letterSpacing": 0,

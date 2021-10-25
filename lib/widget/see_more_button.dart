@@ -6,7 +6,7 @@ class SeeMoreButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 60,
+      width: 55,
       // color: Colors.purple,
       child: IconButton(
         padding: const EdgeInsets.only(
