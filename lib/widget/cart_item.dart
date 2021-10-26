@@ -1,4 +1,3 @@
-import 'package:app_shop/demo_data.dart';
 import 'package:app_shop/model/Product.dart';
 import 'package:flutter/material.dart';
 
@@ -15,30 +14,40 @@ class CartItem extends StatefulWidget {
 class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      tileColor: Colors.white,
-      leading: ClipRRect(
-        borderRadius: BorderRadius.circular(8),
-        child: Image.network(
-          widget.product.imageUrl,
-          fit: BoxFit.cover,
-          width: 80,
-          height: 80,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(
+          Radius.circular(10),
+        ),
+        gradient: LinearGradient(
+          colors: <Color>[Colors.black, Colors.purple.shade400],
         ),
       ),
-      subtitle: const QuantityContainer(),
-      title: Text(
-        widget.product.title,
-        style: const TextStyle(
-          color: Colors.black,
-          fontSize: 20,
+      child: ListTile(
+        tileColor: Colors.black,
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.network(
+            widget.product.imageUrl,
+            fit: BoxFit.cover,
+            width: 80,
+            height: 80,
+          ),
         ),
-      ),
-      trailing: Text(
-        "Rs.${widget.product.price.ceil().toString()}",
-        style: const TextStyle(
-          color: Colors.purple,
-          fontSize: 20,
+        subtitle: const QuantityContainer(),
+        title: Text(
+          widget.product.title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+        trailing: Text(
+          "Rs.${widget.product.price.ceil().toString()}",
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
         ),
       ),
     );
@@ -63,7 +72,7 @@ class _QuantityContainerState extends State<QuantityContainer> {
       children: [
         const Text('Quantity ',
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontSize: 15,
               fontWeight: FontWeight.bold,
             )),
@@ -79,7 +88,7 @@ class _QuantityContainerState extends State<QuantityContainer> {
           },
           icon: const Icon(
             Icons.remove,
-            color: Colors.black,
+            color: Colors.white,
             size: 20,
           ),
         ),
@@ -95,7 +104,7 @@ class _QuantityContainerState extends State<QuantityContainer> {
           },
           icon: const Icon(
             Icons.add,
-            color: Colors.black,
+            color: Colors.white,
             size: 20,
           ),
         ),
