@@ -45,7 +45,10 @@ class MyApp extends StatelessWidget {
           ),
           subtitle1: TextStyle(color: Colors.grey),
           subtitle2: TextStyle(color: Colors.white),
-          bodyText1: TextStyle(color: Colors.white),
+          bodyText1: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+          ),
         ),
         scaffoldBackgroundColor: Colors.black,
       ),
