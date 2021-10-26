@@ -9,6 +9,7 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
@@ -59,10 +60,18 @@ class ProductDetailScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   right: 9,
                 ),
-                child: Text(
-                  product.title,
-                  style: const TextStyle(
-                    color: Colors.white,
+                child: Container(
+                  // color: Colors.black,
+                  padding: const EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.black,
+                  ),
+                  child: Text(
+                    product.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -113,11 +122,53 @@ class ProductDetailScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 300),
+                const SizedBox(height: 800),
               ],
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: 60,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: MaterialButton(
+                height: 40,
+                color: Colors.black,
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      'Add to Cart',
+                      style: textTheme.bodyText1,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'BUY NOW',
+                  style: textTheme.bodyText1,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

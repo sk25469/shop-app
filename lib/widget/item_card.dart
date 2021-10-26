@@ -19,7 +19,7 @@ class ItemCard extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: Container(
-              width: 140,
+              width: 130,
               padding: const EdgeInsets.all(0),
               decoration: BoxDecoration(
                 color: Colors.white,

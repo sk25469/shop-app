@@ -2,10 +2,11 @@ import 'package:app_shop/model/Product.dart';
 import 'package:flutter/material.dart';
 
 class CartItem extends StatefulWidget {
-  const CartItem({Key? key, required this.product, required this.index})
-      : super(key: key);
+  const CartItem({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
   final Product product;
-  final int index;
 
   @override
   State<CartItem> createState() => _CartItemState();
@@ -15,13 +16,11 @@ class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(
           Radius.circular(10),
         ),
-        gradient: LinearGradient(
-          colors: <Color>[Colors.black, Colors.purple.shade400],
-        ),
+        color: Colors.black,
       ),
       child: ListTile(
         tileColor: Colors.black,

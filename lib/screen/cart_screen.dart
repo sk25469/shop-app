@@ -44,20 +44,52 @@ class _CartScreenState extends State<CartScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Dismissible(
                 key: Key(cartItem[index].id),
+                direction: DismissDirection.endToStart,
                 background: Container(color: Colors.red),
                 onDismissed: (direction) {
-                  setState(() {
-                    cartItem.removeAt(index);
-                  });
+                  if (direction == DismissDirection.endToStart) {
+                    setState(() {
+                      cartItem.removeAt(index);
+                    });
+                  }
                 },
                 child: CartItem(
                   product: cartItem[index],
-                  index: index,
                 ),
               ),
             );
           },
           itemCount: cartItem.length,
+        ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0),
+              child: Text(
+                'Total - Rs. 500',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'PLACE ORDER',
+                  style: textTheme.bodyText1,
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
