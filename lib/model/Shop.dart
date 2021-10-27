@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Shop {
   final String name;
   final String address;

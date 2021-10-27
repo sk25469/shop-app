@@ -63,29 +63,78 @@ class _CartScreenState extends State<CartScreen> {
         ),
       ),
       bottomNavigationBar: Container(
+        height: 60,
         decoration: const BoxDecoration(
           color: Colors.white,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 8.0),
-              child: Text(
-                'Total - Rs. 500',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Row(
+                children: [
+                  const Text(
+                    'Total :',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
+                  ),
+                  Image.asset(
+                    'assets/images/currency-inr.png',
+                    color: Colors.black,
+                    width: 22,
+                    height: 22,
+                  ),
+                  const Text(
+                    '500',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
               ),
             ),
-            Padding(
+            Container(
+              width: 250,
+              height: 50,
               padding: const EdgeInsets.only(right: 8.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text(
-                  'PLACE ORDER',
-                  style: textTheme.bodyText1,
+              child: MaterialButton(
+                height: 40,
+                color: Colors.black,
+                onPressed: () {
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Order Placed',
+                            style: textTheme.bodyText2,
+                          ),
+                          duration: const Duration(milliseconds: 700),
+                        ),
+                      )
+                      .closed
+                      .then(
+                        (value) => Navigator.of(context).pop(),
+                      );
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    const Icon(
+                      Icons.shopping_bag_sharp,
+                      color: Colors.white,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Text(
+                        'PLACE ORDER',
+                        style: textTheme.bodyText1,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             )

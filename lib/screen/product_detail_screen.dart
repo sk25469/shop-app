@@ -136,12 +136,26 @@ class ProductDetailScreen extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Padding(
+            Container(
               padding: const EdgeInsets.only(left: 8.0),
+              width: 150,
+              height: 45,
               child: MaterialButton(
                 height: 40,
                 color: Colors.black,
-                onPressed: () {},
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text(
+                        'Item added to cart',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  );
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -151,19 +165,38 @@ class ProductDetailScreen extends StatelessWidget {
                     ),
                     Text(
                       'Add to Cart',
-                      style: textTheme.bodyText1,
+                      style: textTheme.bodyText2,
                     ),
                   ],
                 ),
               ),
             ),
-            Padding(
+            Container(
+              width: 200,
+              height: 50,
               padding: const EdgeInsets.only(right: 8.0),
-              child: ElevatedButton(
+              child: MaterialButton(
+                height: 40,
+                color: Colors.purple.shade500,
                 onPressed: () {},
-                child: Text(
-                  'BUY NOW',
-                  style: textTheme.bodyText1,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const [
+                    Icon(
+                      Icons.shopping_bag_outlined,
+                      color: Colors.white,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(4.0),
+                      child: Text(
+                        'BUY NOW',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             )
