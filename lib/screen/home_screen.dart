@@ -5,7 +5,6 @@ import 'package:app_shop/widget/custom_search_bar.dart';
 import 'package:app_shop/widget/item_card.dart';
 import 'package:app_shop/widget/see_more_button.dart';
 import 'package:flutter/material.dart';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home-screen';

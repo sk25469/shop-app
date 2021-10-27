@@ -102,8 +102,11 @@ class _CartScreenState extends State<CartScreen> {
               ),
               Container(
                 width: 250,
-                height: 50,
-                padding: const EdgeInsets.only(right: 8.0),
+                height: 48,
+                padding: const EdgeInsets.only(
+                  right: 8.0,
+                  bottom: 3,
+                ),
                 child: MaterialButton(
                   height: 40,
                   color: Colors.purple.shade500,

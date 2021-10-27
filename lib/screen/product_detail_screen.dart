@@ -152,7 +152,7 @@ class ProductDetailScreen extends StatelessWidget {
                         content: Text(
                           'Item added to cart',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 16,
                           ),
                         ),

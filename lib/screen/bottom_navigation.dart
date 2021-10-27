@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:app_shop/screen/cart_screen.dart';
 import 'package:app_shop/screen/food_screen.dart';
 import 'package:app_shop/screen/medicine_screen.dart';
@@ -5,6 +6,9 @@ import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:titled_navigation_bar/titled_navigation_bar.dart';
+import 'package:flutter/animation.dart';
+
+const double _fabDimension = 56;
 
 class BottomNavigationScreen extends StatefulWidget {
   static const routeName = '/bottom-nav-screen';
@@ -46,18 +50,53 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   Widget build(BuildContext context) {
     bool keyboardIsOpen = MediaQuery.of(context).viewInsets.bottom != 0;
     return Scaffold(
-      body: _pages[_selectedPageIndex]['page'] as Widget,
+      body: Material(
+        child: PageTransitionSwitcher(
+          transitionBuilder: (child, primaryAnimation, secondaryAnimatiion) {
+            return FadeThroughTransition(
+              animation: primaryAnimation,
+              secondaryAnimation: secondaryAnimatiion,
+              child: child,
+              // fillColor: Colors.black,
+            );
+          },
+          child: _pages[_selectedPageIndex]['page'] as Widget,
+        ),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: Visibility(
         visible: !keyboardIsOpen,
-        child: FloatingActionButton(
-          foregroundColor: Colors.white,
-          backgroundColor: Colors.purple,
-          onPressed: () {
-            Navigator.of(context).pushNamed(CartScreen.routeName);
+        child: OpenContainer(
+          openBuilder: (ctx, _) {
+            return const CartScreen();
           },
-          child: const Icon(Icons.shopping_cart_outlined),
-          highlightElevation: 10,
+          closedShape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(_fabDimension / 2),
+            ),
+          ),
+          closedBuilder: (ctx, _) {
+            return Container(
+              color: Colors.purple,
+              height: _fabDimension,
+              width: _fabDimension,
+              child: const Center(
+                child: Icon(
+                  Icons.shopping_cart_outlined,
+                  color: Colors.white,
+                ),
+              ),
+            );
+          },
+          // child: FloatingActionButton(
+          //   foregroundColor: Colors.white,
+          //   backgroundColor: Colors.purple,
+          //   onPressed: () {
+          //     Navigator.of(context).pushNamed(CartScreen.routeName);
+          //   },
+          //   child: const Icon(Icons.shopping_cart_outlined),
+          //   highlightElevation: 10,
+          // ),
         ),
       ),
       bottomNavigationBar: TitledBottomNavigationBar(

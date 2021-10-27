@@ -224,42 +224,7 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                       left: 20,
                       right: 20,
                     ),
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed(BottomNavigationScreen.routeName);
-                      },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      padding: const EdgeInsets.all(0.0),
-                      child: Ink(
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: <Color>[Colors.purpleAccent, Colors.purple],
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(50.0),
-                          ),
-                        ),
-                        child: Container(
-                          height: 50,
-                          constraints: const BoxConstraints(
-                            minWidth: 88.0,
-                            minHeight: 36.0,
-                          ), // min sizes for Material buttons
-                          alignment: Alignment.center,
-                          child: const Text(
-                            'Create an account',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    child: CreateAccountButton(context),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -301,4 +266,42 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
       ),
     );
   }
+}
+
+Widget CreateAccountButton(BuildContext context) {
+  return RaisedButton(
+    onPressed: () {
+      Navigator.of(context).pushReplacementNamed(BottomNavigationScreen.routeName);
+    },
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(50.0),
+    ),
+    padding: const EdgeInsets.all(0.0),
+    child: Ink(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: <Color>[Colors.purpleAccent, Colors.purple],
+        ),
+        borderRadius: BorderRadius.all(
+          Radius.circular(50.0),
+        ),
+      ),
+      child: Container(
+        height: 50,
+        constraints: const BoxConstraints(
+          minWidth: 88.0,
+          minHeight: 36.0,
+        ), // min sizes for Material buttons
+        alignment: Alignment.center,
+        child: const Text(
+          'Create an account',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 15,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ),
+  );
 }

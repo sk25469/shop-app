@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
       // theme: themeData,
       theme: ThemeData(
         primarySwatch: Colors.purple,
+        canvasColor: Colors.black,
         textTheme: const TextTheme(
           headline1: TextStyle(color: Colors.white),
           headline2: TextStyle(color: Colors.white),
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
             fontSize: 15,
           ),
         ),
-        scaffoldBackgroundColor: Colors.black,
+        // scaffoldBackgroundColor: Colors.black,
       ),
       routes: {
         '/': (context) => const UserSignupScreen(),
