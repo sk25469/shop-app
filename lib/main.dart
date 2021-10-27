@@ -10,15 +10,13 @@ void main() {
   // final themeStr = await rootBundle.loadString('assets/flutter_theme.json');
   // final themeJson = jsonDecode(themeStr);
   // final theme = ThemeDecoder.decodeThemeData(themeJson)!;
-  runApp(
-    MyApp(),
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   // var themeData;
-  MyApp({
+  const MyApp({
     Key? key,
   }) : super(key: key);
 

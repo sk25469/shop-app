@@ -51,12 +51,24 @@ class ItemCard extends StatelessWidget {
             style: _textTheme.bodyText1,
           ),
         ),
-        Text(
-          "Rs.${product.price.ceil()}/-",
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/currency-inr.png',
+              color: Colors.white,
+              height: 20,
+              width: 20,
+            ),
+            Text(
+              "${product.price.ceil()}/-",
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
+          ],
         )
       ],
     );

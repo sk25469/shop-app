@@ -55,13 +55,17 @@ class FoodScreen extends StatelessWidget {
               },
               child: ListView.builder(
                 itemBuilder: (ctx, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(
-                      top: 8.0,
-                      left: 4,
-                      right: 4,
+                  return InkWell(
+                    onTap: () {},
+                    child: Container(
+                      padding: const EdgeInsets.only(
+                        top: 4.0,
+                        left: 4,
+                        right: 4,
+                        bottom: 4,
+                      ),
+                      child: ShopItem(shop: _shopItem[index]),
                     ),
-                    child: ShopItem(shop: _shopItem[index]),
                   );
                 },
                 itemCount: _shopItem.length,

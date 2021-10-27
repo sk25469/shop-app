@@ -128,79 +128,86 @@ class ProductDetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        height: 60,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              padding: const EdgeInsets.only(left: 8.0),
-              width: 150,
-              height: 45,
-              child: MaterialButton(
-                height: 40,
-                color: Colors.black,
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text(
-                        'Item added to cart',
+      bottomNavigationBar: Material(
+        shadowColor: Colors.white,
+        elevation: 10,
+        child: Container(
+          height: 60,
+          decoration: const BoxDecoration(
+            color: Color.fromRGBO(35, 31, 32, 1),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(left: 8.0),
+                width: 150,
+                height: 45,
+                child: MaterialButton(
+                  height: 40,
+                  color: Colors.white,
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          'Item added to cart',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      Icon(
+                        Icons.add,
+                        color: Colors.black,
+                      ),
+                      Text(
+                        'Add to Cart',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 16,
                         ),
                       ),
-                    ),
-                  );
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
-                    Text(
-                      'Add to Cart',
-                      style: textTheme.bodyText2,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Container(
-              width: 200,
-              height: 50,
-              padding: const EdgeInsets.only(right: 8.0),
-              child: MaterialButton(
-                height: 40,
-                color: Colors.purple.shade500,
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
-                    Icon(
-                      Icons.shopping_bag_outlined,
-                      color: Colors.white,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(4.0),
-                      child: Text(
-                        'BUY NOW',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
+              Container(
+                width: 200,
+                height: 50,
+                padding: const EdgeInsets.only(right: 8.0),
+                child: MaterialButton(
+                  height: 40,
+                  color: Colors.purple.shade500,
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: const [
+                      Icon(
+                        Icons.shopping_bag_outlined,
+                        color: Colors.white,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(4.0),
+                        child: Text(
+                          'BUY NOW',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -28,13 +28,21 @@ class ShopItem extends StatelessWidget {
         shop.address,
         style: textTheme.bodyText2,
       ),
-      trailing: IconButton(
-        onPressed: () {},
-        icon: const Icon(
-          Icons.navigate_next_rounded,
-          color: Colors.white,
-          size: 40,
-        ),
+      trailing: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            'Rating',
+            style: textTheme.bodyText2,
+          ),
+          const Text(
+            '4.5',
+            style: TextStyle(
+              color: Colors.yellowAccent,
+              fontSize: 22,
+            ),
+          )
+        ],
       ),
     );
   }
