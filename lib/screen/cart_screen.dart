@@ -73,13 +73,12 @@ class _CartScreenState extends State<CartScreen> {
           itemCount: cartItem.length,
         ),
       ),
-      bottomNavigationBar: CartScreenBottomAppBar(context, textTheme),
+      bottomNavigationBar: _cartScreenBottomAppBar(context, textTheme),
     );
   }
 }
 
-// ignore: non_constant_identifier_names
-Widget CartScreenBottomAppBar(BuildContext context, TextTheme textTheme) {
+Widget _cartScreenBottomAppBar(BuildContext context, TextTheme textTheme) {
   return Material(
     elevation: 10,
     shadowColor: Colors.white,

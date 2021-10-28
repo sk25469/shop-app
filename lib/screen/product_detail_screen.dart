@@ -129,13 +129,13 @@ class ProductDetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: ProductDetailBottomAppBar(context),
+      bottomNavigationBar: _productDetailBottomAppBar(context),
     );
   }
 }
 
 // ignore: non_constant_identifier_names
-Widget ProductDetailBottomAppBar(BuildContext context) {
+Widget _productDetailBottomAppBar(BuildContext context) {
   return Material(
     shadowColor: Colors.white,
     elevation: 10,

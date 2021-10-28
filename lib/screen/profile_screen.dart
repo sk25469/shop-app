@@ -87,7 +87,7 @@ Widget _buildProfileTile(
       leading: Icon(
         icon,
         color: Colors.white,
-        size: 35,
+        size: 30,
       ),
       title: Text(
         title,
