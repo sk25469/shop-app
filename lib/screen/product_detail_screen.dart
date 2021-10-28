@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 class ProductDetailScreen extends StatelessWidget {
   final Product product;
 
-  ProductDetailScreen(this.product);
+  // ignore: use_key_in_widget_constructors
+  const ProductDetailScreen(this.product);
   static const routeName = '/product-detail';
 
   @override
   Widget build(BuildContext context) {
-    var textTheme = Theme.of(context).textTheme;
+    // var textTheme = Theme.of(context).textTheme;
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
@@ -115,7 +116,7 @@ class ProductDetailScreen extends StatelessWidget {
                         style: const TextStyle(
                           color: Colors.pinkAccent,
                           fontSize: 45,
-                          fontWeight: FontWeight.w300,
+                          fontWeight: FontWeight.w600,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -128,88 +129,96 @@ class ProductDetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: Material(
-        shadowColor: Colors.white,
-        elevation: 10,
-        child: Container(
-          height: 60,
-          decoration: const BoxDecoration(
-            color: Color.fromRGBO(35, 31, 32, 1),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                padding: const EdgeInsets.only(left: 8.0),
-                width: 150,
-                height: 45,
-                child: MaterialButton(
-                  height: 40,
-                  color: Colors.white,
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text(
-                          'Item added to cart',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
-                      Icon(
-                        Icons.add,
-                        color: Colors.black,
-                      ),
-                      Text(
-                        'Add to Cart',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                width: 200,
-                height: 50,
-                padding: const EdgeInsets.only(right: 8.0),
-                child: MaterialButton(
-                  height: 40,
-                  color: Colors.purple.shade500,
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      Icon(
-                        Icons.shopping_bag_outlined,
-                        color: Colors.white,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(4.0),
-                        child: Text(
-                          'BUY NOW',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: ProductDetailBottomAppBar(context),
     );
   }
+}
+
+// ignore: non_constant_identifier_names
+Widget ProductDetailBottomAppBar(BuildContext context) {
+  return Material(
+    shadowColor: Colors.white,
+    elevation: 10,
+    child: Container(
+      height: 60,
+      decoration: const BoxDecoration(
+        color: Color.fromRGBO(35, 31, 32, 1),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            padding: const EdgeInsets.only(left: 8.0),
+            width: 150,
+            height: 45,
+            child: MaterialButton(
+              height: 40,
+              color: Colors.white,
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      'Item added to cart',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
+                    duration: Duration(milliseconds: 800),
+                  ),
+                );
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: const [
+                  Icon(
+                    Icons.add,
+                    color: Colors.black,
+                  ),
+                  Text(
+                    'Add to Cart',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            width: 240,
+            height: 50,
+            padding: const EdgeInsets.only(right: 8.0),
+            child: MaterialButton(
+              height: 30,
+              color: Colors.purple.shade500,
+              onPressed: () {},
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Icon(
+                    Icons.shopping_bag_outlined,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(4.0),
+                    child: Text(
+                      'BUY NOW',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    ),
+  );
 }

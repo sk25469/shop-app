@@ -73,92 +73,97 @@ class _CartScreenState extends State<CartScreen> {
           itemCount: cartItem.length,
         ),
       ),
-      bottomNavigationBar: Material(
-        elevation: 10,
-        shadowColor: Colors.white,
-        child: Container(
-          height: 60,
-          decoration: const BoxDecoration(
-            color: Color.fromRGBO(35, 31, 32, 1),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Row(
-                  children: [
-                    const Text(
-                      'Total :',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                      ),
-                    ),
-                    Image.asset(
-                      'assets/images/currency-inr.png',
-                      color: Colors.white,
-                      width: 22,
-                      height: 22,
-                    ),
-                    const Text(
-                      '500',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                width: 250,
-                height: 48,
-                padding: const EdgeInsets.only(
-                  right: 8.0,
-                  bottom: 3,
-                ),
-                child: MaterialButton(
-                  height: 40,
-                  color: Colors.purple.shade500,
-                  onPressed: () {
-                    ScaffoldMessenger.of(context)
-                        .showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Order Placed',
-                              style: textTheme.bodyText2,
-                            ),
-                            duration: const Duration(milliseconds: 700),
-                          ),
-                        )
-                        .closed
-                        .then(
-                          (value) => Navigator.of(context).pop(),
-                        );
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const Icon(
-                        Icons.shopping_bag_sharp,
-                        color: Colors.white,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Text(
-                          'PLACE ORDER',
-                          style: textTheme.bodyText1,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: CartScreenBottomAppBar(context, textTheme),
     );
   }
+}
+
+// ignore: non_constant_identifier_names
+Widget CartScreenBottomAppBar(BuildContext context, TextTheme textTheme) {
+  return Material(
+    elevation: 10,
+    shadowColor: Colors.white,
+    child: Container(
+      height: 60,
+      decoration: const BoxDecoration(
+        color: Color.fromRGBO(35, 31, 32, 1),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Row(
+              children: [
+                const Text(
+                  'Total :',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
+                ),
+                Image.asset(
+                  'assets/images/currency-inr.png',
+                  color: Colors.white,
+                  width: 22,
+                  height: 22,
+                ),
+                const Text(
+                  '500',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: 250,
+            height: 48,
+            padding: const EdgeInsets.only(
+              right: 8.0,
+              bottom: 3,
+            ),
+            child: MaterialButton(
+              height: 40,
+              color: Colors.purple.shade500,
+              onPressed: () {
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Order Placed',
+                          style: textTheme.bodyText2,
+                        ),
+                        duration: const Duration(milliseconds: 700),
+                      ),
+                    )
+                    .closed
+                    .then(
+                      (value) => Navigator.of(context).pop(),
+                    );
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Icon(
+                    Icons.shopping_bag_sharp,
+                    color: Colors.white,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Text(
+                      'PLACE ORDER',
+                      style: textTheme.bodyText1,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    ),
+  );
 }
