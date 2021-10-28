@@ -1,6 +1,8 @@
 import 'package:app_shop/model/Product.dart';
 import 'package:flutter/material.dart';
 
+/// It displays the item details for the items in cart
+/// User can increase and decrease the no. of item in cart
 class CartItem extends StatefulWidget {
   const CartItem({
     Key? key,
@@ -53,6 +55,8 @@ class _CartItemState extends State<CartItem> {
   }
 }
 
+/// It displays the quantity of item in cart
+/// User can increase and decrease the no. of item in cart
 class QuantityContainer extends StatefulWidget {
   const QuantityContainer({Key? key}) : super(key: key);
 

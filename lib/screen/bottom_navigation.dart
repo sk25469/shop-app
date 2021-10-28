@@ -6,8 +6,9 @@ import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:titled_navigation_bar/titled_navigation_bar.dart';
-import 'package:flutter/animation.dart';
 
+/// This is the dimension of floation action button, used for the animation while using
+/// [OpenContainer]
 const double _fabDimension = 56;
 
 class BottomNavigationScreen extends StatefulWidget {
@@ -46,6 +47,10 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     },
   ];
 
+  /// [OpenContainer] from the [Animation] package is used to provide the zooming
+  /// animation for the floating action button and
+  /// [PageTransitionSwitcher] is used to switch between the pages with a fade through
+  /// transition
   @override
   Widget build(BuildContext context) {
     bool keyboardIsOpen = MediaQuery.of(context).viewInsets.bottom != 0;
@@ -88,15 +93,6 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
               ),
             );
           },
-          // child: FloatingActionButton(
-          //   foregroundColor: Colors.white,
-          //   backgroundColor: Colors.purple,
-          //   onPressed: () {
-          //     Navigator.of(context).pushNamed(CartScreen.routeName);
-          //   },
-          //   child: const Icon(Icons.shopping_cart_outlined),
-          //   highlightElevation: 10,
-          // ),
         ),
       ),
       bottomNavigationBar: TitledBottomNavigationBar(

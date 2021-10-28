@@ -268,6 +268,9 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
   }
 }
 
+/// A button that shows a circular progress indicator when pressed.
+/// The progress indicator is shown after a brief delay, and the button disappears.
+/// The button is disabled while the progress indicator is shown.
 Widget CreateAccountButton(BuildContext context) {
   return RaisedButton(
     onPressed: () {
