@@ -13,7 +13,7 @@ const double _fabDimension = 56;
 
 class BottomNavigationScreen extends StatefulWidget {
   static const routeName = '/bottom-nav-screen';
-  BottomNavigationScreen({Key? key}) : super(key: key);
+  const BottomNavigationScreen({Key? key}) : super(key: key);
 
   @override
   _BottomNavigationScreenState createState() => _BottomNavigationScreenState();

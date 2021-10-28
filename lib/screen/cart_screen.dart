@@ -45,7 +45,18 @@ class _CartScreenState extends State<CartScreen> {
               child: Dismissible(
                 key: Key(cartItem[index].id),
                 direction: DismissDirection.endToStart,
-                background: Container(color: Colors.red),
+                background: Container(
+                  color: Colors.red,
+                  child: Container(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    alignment: Alignment.centerRight,
+                    child: const Icon(
+                      Icons.delete,
+                      color: Colors.white,
+                      size: 32,
+                    ),
+                  ),
+                ),
                 onDismissed: (direction) {
                   if (direction == DismissDirection.endToStart) {
                     setState(() {

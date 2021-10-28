@@ -35,7 +35,9 @@ class _CartItemState extends State<CartItem> {
             height: 80,
           ),
         ),
-        subtitle: const QuantityContainer(),
+        subtitle: QuantityContainer(
+          quantity: 1,
+        ),
         title: Text(
           widget.product.title,
           style: const TextStyle(
@@ -43,11 +45,26 @@ class _CartItemState extends State<CartItem> {
             fontSize: 20,
           ),
         ),
-        trailing: Text(
-          "Rs.${widget.product.price.ceil().toString()}",
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 20,
+        trailing: Container(
+          padding: const EdgeInsets.only(left: 10),
+          color: Colors.black,
+          width: 70,
+          child: Row(
+            children: [
+              Image.asset(
+                'assets/images/currency-inr.png',
+                color: Colors.white,
+                width: 24,
+                height: 24,
+              ),
+              Text(
+                widget.product.price.ceil().toString(),
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -57,16 +74,19 @@ class _CartItemState extends State<CartItem> {
 
 /// It displays the quantity of item in cart
 /// User can increase and decrease the no. of item in cart
+// ignore: must_be_immutable
 class QuantityContainer extends StatefulWidget {
-  const QuantityContainer({Key? key}) : super(key: key);
+  QuantityContainer({
+    Key? key,
+    required quantity,
+  }) : super(key: key);
+  int quantity = 1;
 
   @override
   State<QuantityContainer> createState() => _QuantityContainerState();
 }
 
 class _QuantityContainerState extends State<QuantityContainer> {
-  int _initialQuantity = 0;
-
   @override
   Widget build(BuildContext context) {
     var tt = Theme.of(context).textTheme;
@@ -82,10 +102,10 @@ class _QuantityContainerState extends State<QuantityContainer> {
         IconButton(
           onPressed: () {
             setState(() {
-              if (_initialQuantity > 0) {
-                _initialQuantity--;
+              if (widget.quantity > 0) {
+                widget.quantity--;
               } else {
-                _initialQuantity = 0;
+                widget.quantity = 0;
               }
             });
           },
@@ -96,13 +116,13 @@ class _QuantityContainerState extends State<QuantityContainer> {
           ),
         ),
         Text(
-          _initialQuantity.toString(),
+          widget.quantity.toString(),
           style: tt.bodyText1,
         ),
         IconButton(
           onPressed: () {
             setState(() {
-              _initialQuantity++;
+              widget.quantity++;
             });
           },
           icon: const Icon(
