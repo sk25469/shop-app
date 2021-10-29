@@ -1,4 +1,5 @@
 import 'package:app_shop/demo_data.dart';
+import 'package:app_shop/model/CartProduct.dart';
 import 'package:app_shop/model/Product.dart';
 import 'package:app_shop/widget/cart_item.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  List<Product> cartItem = Demo().cartProduct;
+  List<CartProduct> cartItem = Demo().cartProduct;
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +84,7 @@ Widget _cartScreenBottomAppBar(BuildContext context, TextTheme textTheme) {
     elevation: 10,
     shadowColor: Colors.white,
     child: Container(
-      height: 60,
+      height: 65,
       decoration: const BoxDecoration(
         color: Color.fromRGBO(35, 31, 32, 1),
       ),

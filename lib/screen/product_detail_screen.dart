@@ -11,6 +11,8 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // var textTheme = Theme.of(context).textTheme;
+
+    // print(product.description);
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
@@ -98,12 +100,12 @@ class ProductDetailScreen extends StatelessWidget {
                       color: const Color.fromRGBO(35, 31, 32, 1),
                       margin: const EdgeInsets.all(8.0),
                       child: Text(
-                        ' An amazing motichur ka ${product.title}',
+                        product.description,
+                        // product.description,
                         style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 17,
+                          fontSize: 20,
                         ),
-                        // loadedProduct.description,
                         textAlign: TextAlign.center,
                         softWrap: true,
                       ),
@@ -140,7 +142,7 @@ Widget _productDetailBottomAppBar(BuildContext context) {
     shadowColor: Colors.white,
     elevation: 10,
     child: Container(
-      height: 60,
+      height: 65,
       decoration: const BoxDecoration(
         color: Color.fromRGBO(35, 31, 32, 1),
       ),

@@ -13,10 +13,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Product> _products = Demo.products;
-
-    // for (int i = 0; i < _products.length; i++) {
-    //   print(_products[i].toString());
-    // }
     return SafeArea(
       child: Column(
         children: [
