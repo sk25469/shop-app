@@ -2,6 +2,7 @@ import 'package:app_shop/demo_data.dart';
 import 'package:app_shop/model/CartProduct.dart';
 import 'package:app_shop/model/Product.dart';
 import 'package:app_shop/widget/cart_item.dart';
+import 'package:app_shop/widget/rupee_amount.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
@@ -93,34 +94,40 @@ Widget _cartScreenBottomAppBar(BuildContext context, TextTheme textTheme) {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 8.0),
-            child: Row(
-              children: [
-                const Text(
-                  'Total :',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
+            child: Container(
+              height: 40,
+              width: 140,
+              padding: const EdgeInsets.only(
+                left: 8.0,
+                right: 8.0,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+              ),
+              child: Row(
+                children: const [
+                  Text(
+                    'Total :',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
                   ),
-                ),
-                Image.asset(
-                  'assets/images/currency-inr.png',
-                  color: Colors.white,
-                  width: 22,
-                  height: 22,
-                ),
-                const Text(
-                  '500',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-              ],
+                  Amount(
+                    amount: 500,
+                    rupeeIconSize: 22,
+                    amountTextColor: Colors.black,
+                    rupeeIconColor: Colors.green,
+                    amountTextSize: 20,
+                  )
+                ],
+              ),
             ),
           ),
           Container(
             width: 250,
-            height: 48,
+            height: 45,
             padding: const EdgeInsets.only(
               right: 8.0,
               bottom: 3,

@@ -1,10 +1,45 @@
 import 'package:app_shop/model/CartProduct.dart';
+import 'package:app_shop/model/Medicine.dart';
 import 'package:app_shop/model/Product.dart';
 import 'package:uuid/uuid.dart';
 
 import 'model/Shop.dart';
 
 class Demo {
+  static List<Medicine> medicines = [
+    Medicine(
+      id: const Uuid().v4(),
+      name: "Paracetamol",
+      price: 10,
+      image: "assets/images/paracetamol.jpg",
+      description:
+          "Paracetamol is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+    ),
+    Medicine(
+      id: const Uuid().v4(),
+      name: "Aspirin",
+      price: 20,
+      image: "assets/images/aspirin.jpg",
+      description:
+          "Aspirin is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+    ),
+    Medicine(
+      id: const Uuid().v4(),
+      name: "Paracetamol",
+      price: 10,
+      image: "assets/images/paracetamol.jpg",
+      description:
+          "Paracetamol is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+    ),
+    Medicine(
+      id: const Uuid().v4(),
+      name: "Aspirin",
+      price: 20,
+      image: "assets/images/aspirin.jpg",
+      description:
+          "Aspirin is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+    ),
+  ];
   static List<Shop> shops = [
     Shop(
       address: 'Address no. 1',

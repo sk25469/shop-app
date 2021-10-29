@@ -1,5 +1,6 @@
 import 'package:app_shop/screen/bottom_navigation.dart';
 import 'package:app_shop/screen/cart_screen.dart';
+import 'package:app_shop/screen/food_screen.dart';
 import 'package:app_shop/screen/home_screen.dart';
 import 'package:app_shop/screen/user_login_screen.dart';
 import 'package:app_shop/screen/user_signup_screen.dart';
@@ -14,8 +15,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // ignore: prefer_typing_uninitialized_variables
-  // var themeData;
   const MyApp({
     Key? key,
   }) : super(key: key);
@@ -61,15 +60,15 @@ class MyApp extends StatelessWidget {
             fontSize: 15,
           ),
         ),
-        // scaffoldBackgroundColor: Colors.black,
       ),
       routes: {
         '/': (context) => const UserSignupScreen(),
-        BottomNavigationScreen.routeName: (context) => BottomNavigationScreen(),
+        BottomNavigationScreen.routeName: (context) => const BottomNavigationScreen(),
         UserLoginScreen.routeName: (context) => const UserLoginScreen(),
         UserSignupScreen.routeName: (context) => const UserSignupScreen(),
         HomeScreen.routeName: (context) => const HomeScreen(),
         CartScreen.routeName: (context) => const CartScreen(),
+        FoodScreen.routeName: (context) => const FoodScreen(),
         // ProductDetailScreen.routeName: (context) => ProductDetailScreen(Demo.products[0]),
       },
     );

@@ -19,7 +19,7 @@ class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
+      padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(10),
@@ -38,7 +38,7 @@ class _CartItemState extends State<CartItem> {
               height: 80,
             ),
           ),
-          subtitle: Container(
+          subtitle: SizedBox(
             width: 200,
             child: Amount(
               amount: widget.product.quantity * widget.product.price,
@@ -57,7 +57,7 @@ class _CartItemState extends State<CartItem> {
           ),
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+              padding: const EdgeInsets.only(left: 16.0),
               child: QuantityContainer(
                 quantity: 1,
                 product: widget.product,

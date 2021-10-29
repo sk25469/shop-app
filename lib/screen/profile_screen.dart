@@ -9,149 +9,157 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
     return SafeArea(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(
-                  top: 15.0,
-                  left: 20,
-                  bottom: 10,
-                ),
-                child: const Icon(
-                  Icons.account_circle,
-                  color: Colors.white,
-                  size: 45,
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.only(
-                  top: 15.0,
-                  left: 20,
-                  bottom: 10,
-                ),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "My Profile",
-                  style: textTheme.headline3,
-                ),
-              ),
-            ],
-          ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: Scaffold(
+        body: Column(
+          children: [
+            Row(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(
-                        left: 0,
-                        top: 20,
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(55),
-                        border: Border.all(
-                          color: Colors.purpleAccent,
-                          width: 2,
-                        ),
-                      ),
-                      child: CircleAvatar(
-                        radius: 55,
-                        backgroundImage:
-                            const AssetImage('assets/images/profile_pic.jpg'),
-                        child: InkWell(
-                          onTap: () {
-                            // print('Edit profile');
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(40),
-                              color: Colors.purple,
-                            ),
-                            margin: const EdgeInsets.only(
-                              left: 85,
-                              top: 60,
-                            ),
-                            child: const Icon(
-                              Icons.edit,
-                              size: 25,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          "Sahil",
-                          style: TextStyle(
-                            fontSize: 55,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        const Text(
-                          "Sarwar",
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(
-                            left: 0,
-                            right: 20,
-                            top: 10,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                margin: const EdgeInsets.only(
-                                  top: 10,
-                                ),
-                                child: const Icon(
-                                  Icons.phone,
-                                  color: Colors.white,
-                                  size: 20,
-                                ),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(
-                                  left: 10,
-                                  top: 10,
-                                ),
-                                child: const Text(
-                                  '+91-1234567891',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
+                Container(
+                  padding: const EdgeInsets.only(
+                    top: 15.0,
+                    left: 20,
+                    bottom: 10,
+                  ),
+                  child: const Icon(
+                    Icons.account_circle,
+                    color: Colors.white,
+                    size: 45,
+                  ),
                 ),
-                const SizedBox(height: 30),
-                _buildProfileTile(context, 'edit', 'Edit Profile'),
-                // const SizedBox(height: 5),
-                _buildProfileTile(context, 'user', 'My Orders'),
-                // const SizedBox(height: 15),
-                _buildProfileTile(context, 'settings', 'Settings'),
-                const SizedBox(height: 15),
-                _signOutButton(context),
+                Container(
+                  padding: const EdgeInsets.only(
+                    top: 15.0,
+                    left: 20,
+                    bottom: 10,
+                  ),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "My Profile",
+                    style: textTheme.headline3,
+                  ),
+                ),
               ],
             ),
-          ),
-        ],
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(
+                          left: 0,
+                          top: 20,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(55),
+                          border: Border.all(
+                            color: Colors.purpleAccent,
+                            width: 2,
+                          ),
+                        ),
+                        child: CircleAvatar(
+                          radius: 55,
+                          backgroundImage:
+                              const AssetImage('assets/images/profile_pic.jpg'),
+                          child: InkWell(
+                            onTap: () {
+                              // print('Edit profile');
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                color: Colors.purple,
+                              ),
+                              margin: const EdgeInsets.only(
+                                left: 88,
+                                top: 65,
+                              ),
+                              child: const Icon(
+                                Icons.edit,
+                                size: 25,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Sahil",
+                            style: TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          const Text(
+                            "Sarwar",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(
+                              left: 0,
+                              right: 20,
+                              top: 10,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    top: 10,
+                                  ),
+                                  child: const Icon(
+                                    Icons.phone,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    left: 10,
+                                    top: 10,
+                                  ),
+                                  child: const Text(
+                                    '+91-1234567891',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      const SizedBox(height: 30),
+                      _buildProfileTile(context, 'edit', 'Edit Profile'),
+                      // const SizedBox(height: 5),
+                      _buildProfileTile(context, 'user', 'My Orders'),
+                      // const SizedBox(height: 15),
+                      _buildProfileTile(context, 'settings', 'Settings'),
+                      // const SizedBox(height: 15),
+                      _buildProfileTile(context, 'info', 'Contact Us'),
+                      const SizedBox(height: 15),
+                    ],
+                  ),
+                  _signOutButton(context),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -160,10 +168,10 @@ class ProfileScreen extends StatelessWidget {
 Widget _signOutButton(BuildContext context) {
   return Container(
     width: 145,
-    height: 45,
+    height: 40,
     margin: const EdgeInsets.only(
       top: 10,
-      left: 40,
+      left: 55,
       bottom: 30,
     ),
     child: MaterialButton(
@@ -180,6 +188,7 @@ Widget _signOutButton(BuildContext context) {
               padding: EdgeInsets.only(
                 top: 2.0,
                 bottom: 2.0,
+                right: 7,
               ),
               child: Icon(
                 Icons.logout,
@@ -213,8 +222,8 @@ Widget _buildProfileTile(BuildContext context, String icon, String title) {
         borderRadius: BorderRadius.circular(10),
         child: Image(
           image: AssetImage('assets/images/animated_$icon.gif'),
-          width: 40,
-          height: 40,
+          width: 35,
+          height: 35,
         ),
       ),
       title: Text(

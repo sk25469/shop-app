@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomSearchBar extends StatefulWidget {
-  const CustomSearchBar({Key? key}) : super(key: key);
+  final String searchHintText;
+  const CustomSearchBar({
+    Key? key,
+    required this.searchHintText,
+  }) : super(key: key);
 
   @override
   _CustomSearchBarState createState() => _CustomSearchBarState();
@@ -41,7 +45,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                   hintStyle: const TextStyle(
                     color: Colors.grey,
                   ),
-                  hintText: "Search",
+                  hintText: widget.searchHintText,
                   fillColor: const Color.fromRGBO(35, 31, 32, 1),
                 ),
               ),

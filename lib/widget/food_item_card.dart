@@ -2,9 +2,9 @@ import 'package:app_shop/model/Product.dart';
 import 'package:app_shop/screen/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 
-class ItemCard extends StatelessWidget {
+class ProductItemCard extends StatelessWidget {
   final Product product;
-  const ItemCard({
+  const ProductItemCard({
     Key? key,
     required this.product,
   }) : super(key: key);

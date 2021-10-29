@@ -10,9 +10,6 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var textTheme = Theme.of(context).textTheme;
-
-    // print(product.description);
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
@@ -150,7 +147,10 @@ Widget _productDetailBottomAppBar(BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            padding: const EdgeInsets.only(left: 8.0),
+            padding: const EdgeInsets.only(
+              left: 8.0,
+              bottom: 4,
+            ),
             width: 150,
             height: 45,
             child: MaterialButton(
@@ -191,7 +191,10 @@ Widget _productDetailBottomAppBar(BuildContext context) {
           Container(
             width: 240,
             height: 50,
-            padding: const EdgeInsets.only(right: 8.0),
+            padding: const EdgeInsets.only(
+              right: 8.0,
+              bottom: 4.0,
+            ),
             child: MaterialButton(
               height: 30,
               color: Colors.purple.shade500,
@@ -199,10 +202,15 @@ Widget _productDetailBottomAppBar(BuildContext context) {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
-                  Icon(
-                    Icons.shopping_bag_outlined,
-                    color: Colors.white,
-                    size: 30,
+                  Padding(
+                    padding: EdgeInsets.only(
+                      bottom: 4.0,
+                    ),
+                    child: Icon(
+                      Icons.shopping_bag_outlined,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.all(4.0),
