@@ -224,7 +224,7 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
                       left: 20,
                       right: 20,
                     ),
-                    child: CreateAccountButton(context),
+                    child: _createAccountButton(context),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -271,7 +271,7 @@ class _UserSignupScreenState extends State<UserSignupScreen> {
 /// A button that shows a circular progress indicator when pressed.
 /// The progress indicator is shown after a brief delay, and the button disappears.
 /// The button is disabled while the progress indicator is shown.
-Widget CreateAccountButton(BuildContext context) {
+Widget _createAccountButton(BuildContext context) {
   return RaisedButton(
     onPressed: () {
       Navigator.of(context).pushReplacementNamed(BottomNavigationScreen.routeName);

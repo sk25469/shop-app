@@ -15,17 +15,33 @@ class FoodScreen extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.only(
-              top: 15.0,
-              left: 25,
-              bottom: 10,
-            ),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "Food",
-              style: textTheme.headline3,
-            ),
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.only(
+                  top: 15.0,
+                  left: 20,
+                  bottom: 10,
+                ),
+                child: const Icon(
+                  Icons.fastfood,
+                  color: Colors.white,
+                  size: 35,
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(
+                  top: 15.0,
+                  left: 20,
+                  bottom: 10,
+                ),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Food",
+                  style: textTheme.headline3,
+                ),
+              ),
+            ],
           ),
           const CustomSearchBar(),
           Container(
