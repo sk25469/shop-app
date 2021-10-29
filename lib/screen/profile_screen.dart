@@ -1,3 +1,4 @@
+import 'package:app_shop/screen/user_login_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -84,7 +85,10 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     child: RaisedButton(
                       color: Colors.black,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushReplacementNamed(UserLoginScreen.routeName);
+                      },
                       child: Ink(
                         decoration: const BoxDecoration(
                           gradient: LinearGradient(
@@ -97,7 +101,7 @@ class ProfileScreen extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(2.0),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(
