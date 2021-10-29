@@ -22,53 +22,108 @@ class ProfileScreen extends StatelessWidget {
               style: textTheme.headline3,
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                margin: const EdgeInsets.only(
-                  left: 0,
-                  top: 20,
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(55),
-                  border: Border.all(
-                    color: Colors.purpleAccent,
-                    width: 2,
-                  ),
-                ),
-                child: const CircleAvatar(
-                  radius: 55,
-                  backgroundImage: AssetImage('assets/images/profile_pic.jpg'),
-                ),
-              ),
-              Column(
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Sahil",
-                    style: TextStyle(
-                      fontSize: 55,
-                      fontWeight: FontWeight.w400,
-                    ),
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(
+                          left: 0,
+                          top: 20,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(55),
+                          border: Border.all(
+                            color: Colors.purpleAccent,
+                            width: 2,
+                          ),
+                        ),
+                        child: const CircleAvatar(
+                          radius: 55,
+                          backgroundImage: AssetImage('assets/images/profile_pic.jpg'),
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Sahil",
+                            style: TextStyle(
+                              fontSize: 55,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          Text(
+                            "Sarwar",
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                  Text(
-                    "Sarwar",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w300,
+                  const SizedBox(height: 70),
+                  _buildProfileTile(context, 'edit', 'Edit Profile'),
+                  const SizedBox(height: 15),
+                  _buildProfileTile(context, 'user', 'My Orders'),
+                  const SizedBox(height: 15),
+                  _buildProfileTile(context, 'settings', 'Settings'),
+                  const SizedBox(height: 15),
+                  Container(
+                    width: 170,
+                    margin: const EdgeInsets.only(
+                      top: 10,
+                      left: 30,
+                    ),
+                    child: RaisedButton(
+                      color: Colors.black,
+                      onPressed: () {},
+                      child: Ink(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[Colors.purpleAccent, Colors.purple],
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(8.0),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 2.0,
+                                  bottom: 2.0,
+                                ),
+                                child: Image.asset(
+                                  'assets/images/logout.png',
+                                  width: 40,
+                                  height: 40,
+                                ),
+                              ),
+                              Text(
+                                'Sign out',
+                                style: textTheme.bodyText1,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ],
-              )
-            ],
+              ),
+            ),
           ),
-          const SizedBox(height: 70),
-          _buildProfileTile(context, Icons.help, 'Edit Profile'),
-          const SizedBox(height: 15),
-          _buildProfileTile(context, Icons.account_circle, 'My Orders'),
-          const SizedBox(height: 15),
-          _buildProfileTile(context, Icons.settings, 'Settings'),
         ],
       ),
     );
@@ -77,25 +132,31 @@ class ProfileScreen extends StatelessWidget {
 
 Widget _buildProfileTile(
   BuildContext context,
-  IconData icon,
+  String icon,
   String title,
 ) {
   var textTheme = Theme.of(context).textTheme;
-  return SizedBox(
+  return Container(
     width: 350,
+    padding: const EdgeInsets.only(
+      left: 30,
+    ),
     child: ListTile(
-      leading: Icon(
-        icon,
-        color: Colors.white,
-        size: 30,
+      leading: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Image(
+          image: AssetImage('assets/images/animated_$icon.gif'),
+          width: 40,
+          height: 40,
+        ),
       ),
       title: Text(
         title,
         style: textTheme.headline5,
       ),
       trailing: Container(
-        width: 40,
-        height: 40,
+        width: 35,
+        height: 35,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.grey[200],
@@ -104,6 +165,7 @@ Widget _buildProfileTile(
           icon: const Icon(
             Icons.arrow_forward_ios,
             color: Colors.black,
+            size: 20,
           ),
           onPressed: () {},
         ),
