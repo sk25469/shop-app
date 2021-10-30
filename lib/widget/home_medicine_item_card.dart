@@ -1,15 +1,16 @@
 import 'package:app_shop/model/Medicine.dart';
 import 'package:flutter/material.dart';
 
-class MedicineItemCard extends StatelessWidget {
+class HomeMedicineItemCard extends StatelessWidget {
   final Medicine product;
-  const MedicineItemCard({
+  const HomeMedicineItemCard({
     Key? key,
     required this.product,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final _textTheme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -18,6 +19,8 @@ class MedicineItemCard extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: Container(
+              width: 130,
+              padding: const EdgeInsets.all(0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
@@ -35,7 +38,6 @@ class MedicineItemCard extends StatelessWidget {
                   child: Image.asset(
                     product.image,
                     fit: BoxFit.fill,
-                    width: 150,
                   ),
                 ),
               ),
@@ -44,12 +46,10 @@ class MedicineItemCard extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.centerLeft,
+          padding: const EdgeInsets.symmetric(vertical: 5),
           child: Text(
             product.name,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-            ),
+            style: _textTheme.bodyText1,
           ),
         ),
         Container(
@@ -59,15 +59,15 @@ class MedicineItemCard extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/images/currency-inr.png',
-                color: Colors.black,
-                height: 22,
-                width: 22,
+                color: Colors.white,
+                height: 20,
+                width: 20,
               ),
               Text(
                 "${product.price}/-",
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 16,
                 ),
               ),

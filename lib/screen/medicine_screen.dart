@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../demo_data.dart';
 
 class MedicineScreen extends StatelessWidget {
-  static const routeName = '/cart-screen';
+  static const routeName = '/medicine-screen';
   const MedicineScreen({Key? key}) : super(key: key);
 
   @override
@@ -63,14 +63,22 @@ class MedicineScreen extends StatelessWidget {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.8,
-                  crossAxisSpacing: 30,
+                  crossAxisSpacing: 5,
                   mainAxisSpacing: 10,
                 ),
                 itemCount: _medicines.length,
                 itemBuilder: (context, index) {
-                  return Padding(
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                    ),
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 30.0,
+                      horizontal: 20.0,
                       vertical: 10,
                     ),
                     child: MedicineItemCard(product: _medicines[index]),

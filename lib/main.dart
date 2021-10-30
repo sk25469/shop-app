@@ -2,6 +2,7 @@ import 'package:app_shop/screen/bottom_navigation.dart';
 import 'package:app_shop/screen/cart_screen.dart';
 import 'package:app_shop/screen/food_screen.dart';
 import 'package:app_shop/screen/home_screen.dart';
+import 'package:app_shop/screen/medicine_screen.dart';
 import 'package:app_shop/screen/user_login_screen.dart';
 import 'package:app_shop/screen/user_signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -69,6 +70,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => const HomeScreen(),
         CartScreen.routeName: (context) => const CartScreen(),
         FoodScreen.routeName: (context) => const FoodScreen(),
+        MedicineScreen.routeName: (context) => const MedicineScreen(),
         // ProductDetailScreen.routeName: (context) => ProductDetailScreen(Demo.products[0]),
       },
     );

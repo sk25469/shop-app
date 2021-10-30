@@ -42,7 +42,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       'title': 'Medicine Screen',
     },
     {
-      'page': ProfileScreen(),
+      'page': const ProfileScreen(),
       'title': 'My Profile',
     },
   ];
@@ -53,6 +53,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   /// transition
   @override
   Widget build(BuildContext context) {
+    GlobalKey globalKey = GlobalKey<State<TitledBottomNavigationBar>>();
     bool keyboardIsOpen = MediaQuery.of(context).viewInsets.bottom != 0;
     return Scaffold(
       body: Material(
@@ -96,6 +97,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         ),
       ),
       bottomNavigationBar: TitledBottomNavigationBar(
+        key: globalKey,
         onTap: _selectPage,
         curve: Curves.bounceInOut,
         currentIndex: _selectedPageIndex,

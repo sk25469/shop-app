@@ -64,7 +64,7 @@ class ProfileScreen extends StatelessWidget {
                           radius: 55,
                           backgroundImage:
                               const AssetImage('assets/images/profile_pic.jpg'),
-                          child: InkWell(
+                          child: GestureDetector(
                             onTap: () {
                               // print('Edit profile');
                             },
