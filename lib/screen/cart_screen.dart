@@ -48,7 +48,7 @@ class _CartScreenState extends State<CartScreen> {
                 key: Key(cartItem[index].id),
                 direction: DismissDirection.endToStart,
                 background: Container(
-                  color: Colors.red,
+                  color: Colors.redAccent,
                   child: Container(
                     padding: const EdgeInsets.only(right: 20.0),
                     alignment: Alignment.centerRight,
@@ -96,7 +96,7 @@ Widget _cartScreenBottomAppBar(BuildContext context, TextTheme textTheme) {
             padding: const EdgeInsets.only(left: 8.0),
             child: Container(
               height: 40,
-              width: 140,
+              width: 143,
               padding: const EdgeInsets.only(
                 left: 8.0,
                 right: 8.0,

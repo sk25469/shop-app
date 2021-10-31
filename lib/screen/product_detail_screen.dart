@@ -1,4 +1,5 @@
 import 'package:app_shop/model/Product.dart';
+import 'package:app_shop/widget/rupee_amount.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailScreen extends StatelessWidget {
@@ -10,6 +11,7 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
@@ -87,40 +89,49 @@ class ProductDetailScreen extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                const SizedBox(height: 5),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 260,
-                      color: const Color.fromRGBO(35, 31, 32, 1),
-                      margin: const EdgeInsets.all(8.0),
-                      child: Text(
-                        product.description,
-                        // product.description,
-                        style: const TextStyle(
+                const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: _screenWidth * 0.6,
+                        padding: const EdgeInsets.all(8.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
                           color: Colors.white,
-                          fontSize: 20,
                         ),
-                        textAlign: TextAlign.center,
-                        softWrap: true,
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.topCenter,
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'Rs.${product.price.ceil()}',
-                        style: const TextStyle(
-                          color: Colors.pinkAccent,
-                          fontSize: 45,
-                          fontWeight: FontWeight.w600,
+                        child: Text(
+                          product.description,
+                          // product.description,
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                          ),
+                          textAlign: TextAlign.center,
+                          softWrap: true,
                         ),
-                        textAlign: TextAlign.center,
                       ),
-                    ),
-                  ],
+                      Container(
+                        alignment: Alignment.topCenter,
+                        // width: _screenWidth * 0.35,
+                        padding: const EdgeInsets.all(8.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                        ),
+                        child: Amount(
+                          amount: product.price,
+                          rupeeIconSize: 30,
+                          amountTextColor: Colors.black,
+                          rupeeIconColor: Colors.green,
+                          amountTextSize: 35,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 800),
               ],

@@ -25,6 +25,7 @@ class Amount extends StatelessWidget {
           color: rupeeIconColor,
           width: rupeeIconSize,
           height: rupeeIconSize,
+          scale: 0.5,
         ),
         Text(
           amount.toString(),

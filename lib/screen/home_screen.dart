@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       alignment: Alignment.centerLeft,
                       child: const Text(
-                        'Food',
+                        'Recent Food',
                         style: TextStyle(
                           fontSize: 28,
                           color: Colors.white,
@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       alignment: Alignment.centerLeft,
                       child: const Text(
-                        'Medicines',
+                        'Recent Medicines',
                         style: TextStyle(
                           fontSize: 28,
                           color: Colors.white,

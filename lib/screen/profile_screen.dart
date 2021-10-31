@@ -45,111 +45,114 @@ class ProfileScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(
-                          left: 0,
-                          top: 20,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(55),
-                          border: Border.all(
-                            color: Colors.purpleAccent,
-                            width: 2,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(
+                            left: 0,
+                            top: 20,
                           ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 55,
-                          backgroundImage:
-                              const AssetImage('assets/images/profile_pic.jpg'),
-                          child: GestureDetector(
-                            onTap: () {
-                              // print('Edit profile');
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(40),
-                                color: Colors.purple,
-                              ),
-                              margin: const EdgeInsets.only(
-                                left: 88,
-                                top: 65,
-                              ),
-                              child: const Icon(
-                                Icons.edit,
-                                size: 25,
-                              ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(55),
+                            border: Border.all(
+                              color: Colors.purpleAccent,
+                              width: 2,
                             ),
                           ),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Sahil",
-                            style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          const Text(
-                            "Sarwar",
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w300,
-                            ),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.only(
-                              left: 0,
-                              right: 20,
-                              top: 10,
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  margin: const EdgeInsets.only(
-                                    top: 10,
-                                  ),
-                                  child: const Icon(
-                                    Icons.phone,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
+                          child: CircleAvatar(
+                            radius: 55,
+                            backgroundImage:
+                                const AssetImage('assets/images/profile_pic.jpg'),
+                            child: GestureDetector(
+                              onTap: () {
+                                // print('Edit profile');
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.purple,
                                 ),
-                                Container(
-                                  margin: const EdgeInsets.only(
-                                    left: 10,
-                                    top: 10,
-                                  ),
-                                  child: const Text(
-                                    '+91-1234567891',
-                                    style: TextStyle(
+                                margin: const EdgeInsets.only(
+                                  left: 88,
+                                  top: 65,
+                                ),
+                                child: const Icon(
+                                  Icons.edit,
+                                  size: 25,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "Sahil",
+                              style: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            const Text(
+                              "Sarwar",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(
+                                left: 0,
+                                right: 20,
+                                top: 10,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                      top: 10,
+                                    ),
+                                    child: const Icon(
+                                      Icons.phone,
                                       color: Colors.white,
-                                      fontSize: 15,
+                                      size: 20,
                                     ),
                                   ),
-                                ),
-                              ],
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                      left: 10,
+                                      top: 10,
+                                    ),
+                                    child: const Text(
+                                      '+91-1234567891',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
-                      )
-                    ],
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                   Column(
                     children: [
                       const SizedBox(height: 30),
                       _buildProfileTile(context, 'edit', 'Edit Profile'),
-                      // const SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       _buildProfileTile(context, 'user', 'My Orders'),
-                      // const SizedBox(height: 15),
+                      const SizedBox(height: 5),
                       _buildProfileTile(context, 'settings', 'Settings'),
-                      // const SizedBox(height: 15),
+                      const SizedBox(height: 5),
                       _buildProfileTile(context, 'info', 'Contact Us'),
                       const SizedBox(height: 15),
                     ],
@@ -172,7 +175,7 @@ Widget _signOutButton(BuildContext context) {
     margin: const EdgeInsets.only(
       top: 10,
       left: 55,
-      bottom: 30,
+      bottom: 40,
     ),
     child: MaterialButton(
       color: Colors.white,

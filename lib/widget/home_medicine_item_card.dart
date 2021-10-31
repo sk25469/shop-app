@@ -1,4 +1,5 @@
 import 'package:app_shop/model/Medicine.dart';
+import 'package:app_shop/screen/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeMedicineItemCard extends StatelessWidget {

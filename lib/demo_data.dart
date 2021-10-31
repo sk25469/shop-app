@@ -39,6 +39,38 @@ class Demo {
       description:
           "Aspirin is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
     ),
+    Medicine(
+      id: const Uuid().v4(),
+      name: "Paracetamol",
+      price: 10,
+      image: "assets/images/paracetamol.jpg",
+      description:
+          "Paracetamol is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+    ),
+    Medicine(
+      id: const Uuid().v4(),
+      name: "Aspirin",
+      price: 20,
+      image: "assets/images/aspirin.jpg",
+      description:
+          "Aspirin is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+    ),
+    Medicine(
+      id: const Uuid().v4(),
+      name: "Paracetamol",
+      price: 10,
+      image: "assets/images/paracetamol.jpg",
+      description:
+          "Paracetamol is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+    ),
+    Medicine(
+      id: const Uuid().v4(),
+      name: "Aspirin",
+      price: 20,
+      image: "assets/images/aspirin.jpg",
+      description:
+          "Aspirin is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+    ),
   ];
   static List<Shop> shops = [
     Shop(
@@ -104,18 +136,18 @@ class Demo {
   ];
   static List<Product> products = [
     Product(
-      title: 'Samosa',
+      title: 'Pizza',
       imageUrl:
-          'https://images.unsplash.com/photo-1622715395488-71045e2a4990?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80',
-      price: 5.0,
+          'https://media.istockphoto.com/photos/pizza-pepperoni-with-black-olives-picture-id960004202',
+      price: 200,
       id: const Uuid().v4(),
       description: 'DjadlfjalfjHgj',
     ),
     Product(
-      title: 'Laddu',
+      title: 'Sweets',
       imageUrl:
           'https://images.unsplash.com/photo-1605194000384-439c3ced8d15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80',
-      price: 10,
+      price: 40,
       id: const Uuid().v4(),
       description:
           'DjadlfjalfjHgjLKJLdjdlakjflkajflkadjflkanf lnalk jflaj flakj lakjflj lkja',
@@ -124,16 +156,16 @@ class Demo {
       title: 'Dosa',
       imageUrl:
           'https://media.istockphoto.com/photos/masala-sin-picture-id481750586?s=612x612',
-      price: 35,
+      price: 50,
       id: const Uuid().v4(),
       description:
           'DjadlfjalfjHgjLKJLdjdlakjflkajflkadjflkanf lnalk jflaj flakj lakjflj lkja',
     ),
     Product(
-      title: 'Chowmein',
+      title: 'Noodles',
       imageUrl:
           'https://media.istockphoto.com/photos/nepali-chinese-chowmein-picture-id1195969549?s=612x612',
-      price: 30,
+      price: 50,
       id: const Uuid().v4(),
       description:
           'DjadlfjalfjHgjLKJLdjdlakjflkajflkadjflkanf lnalk jflaj flakj lakjflj lkja',
@@ -148,10 +180,10 @@ class Demo {
           'DjadlfjalfjHgjLKJLdjdlakjflkajflkadjflkanf lnalk jflaj flakj lakjflj lkja',
     ),
     Product(
-      title: 'Eggroll',
+      title: 'Biryani',
       imageUrl:
-          'https://media.istockphoto.com/photos/image-of-three-springs-rolls-laying-on-a-white-background-picture-id132038607?s=612x612',
-      price: 30,
+          'https://media.istockphoto.com/photos/chicken-biryani-picture-id1058029096?s=612x612',
+      price: 90,
       id: const Uuid().v4(),
       description:
           'DjadlfjalfjHgjLKJLdjdlakjflkajflkadjflkanf lnalk jflaj flakj lakjflj lkja',
@@ -160,7 +192,7 @@ class Demo {
       title: 'Burger',
       imageUrl:
           'https://media.istockphoto.com/photos/burger-with-beef-and-bacon-picture-id1166797165?s=612x612',
-      price: 20,
+      price: 50,
       id: const Uuid().v4(),
       description:
           'DjadlfjalfjHgjLKJLdjdlakjflkajflkadjflkanf lnalk jflaj flakj lakjflj lkja',
@@ -169,31 +201,31 @@ class Demo {
 
   List<CartProduct> cartProduct = [
     CartProduct(
-      title: 'Samosa',
+      title: 'Pizza',
       imageUrl:
-          'https://images.unsplash.com/photo-1622715395488-71045e2a4990?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80',
-      price: 5.0,
+          'https://media.istockphoto.com/photos/pizza-pepperoni-with-black-olives-picture-id960004202',
+      price: 200,
       id: const Uuid().v4(),
     ),
     CartProduct(
-      title: 'Laddu',
+      title: 'Sweets',
       imageUrl:
           'https://images.unsplash.com/photo-1605194000384-439c3ced8d15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80',
-      price: 10,
+      price: 30,
       id: const Uuid().v4(),
     ),
     CartProduct(
       title: 'Dosa',
       imageUrl:
           'https://media.istockphoto.com/photos/masala-sin-picture-id481750586?s=612x612',
-      price: 35,
+      price: 50,
       id: const Uuid().v4(),
     ),
     CartProduct(
-      title: 'Chowmein',
+      title: 'Noodles',
       imageUrl:
           'https://media.istockphoto.com/photos/nepali-chinese-chowmein-picture-id1195969549?s=612x612',
-      price: 30,
+      price: 50,
       id: const Uuid().v4(),
     ),
     CartProduct(
@@ -204,17 +236,17 @@ class Demo {
       id: const Uuid().v4(),
     ),
     CartProduct(
-      title: 'Eggroll',
+      title: 'Biryani',
       imageUrl:
-          'https://media.istockphoto.com/photos/image-of-three-springs-rolls-laying-on-a-white-background-picture-id132038607?s=612x612',
-      price: 30,
+          'https://media.istockphoto.com/photos/chicken-biryani-picture-id1058029096?s=612x612',
+      price: 90,
       id: const Uuid().v4(),
     ),
     CartProduct(
       title: 'Burger',
       imageUrl:
           'https://media.istockphoto.com/photos/burger-with-beef-and-bacon-picture-id1166797165?s=612x612',
-      price: 20,
+      price: 50,
       id: const Uuid().v4(),
     ),
   ];
