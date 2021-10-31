@@ -105,7 +105,6 @@ class ProductDetailScreen extends StatelessWidget {
                         ),
                         child: Text(
                           product.description,
-                          // product.description,
                           style: const TextStyle(
                             color: Colors.black,
                             fontSize: 20,

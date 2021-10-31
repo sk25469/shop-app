@@ -9,67 +9,67 @@ class Demo {
   static List<Medicine> medicines = [
     Medicine(
       id: const Uuid().v4(),
-      name: "Paracetamol",
+      name: "Medicine2",
       price: 10,
       image: "assets/images/paracetamol.jpg",
       description:
-          "Paracetamol is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+          "Medicine2 is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
     ),
     Medicine(
       id: const Uuid().v4(),
-      name: "Aspirin",
+      name: "Medicine1",
       price: 20,
       image: "assets/images/aspirin.jpg",
       description:
-          "Aspirin is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+          "Medicine1 is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
     ),
     Medicine(
       id: const Uuid().v4(),
-      name: "Paracetamol",
+      name: "Medicine2",
       price: 10,
       image: "assets/images/paracetamol.jpg",
       description:
-          "Paracetamol is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+          "Medicine2 is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
     ),
     Medicine(
       id: const Uuid().v4(),
-      name: "Aspirin",
+      name: "Medicine1",
       price: 20,
       image: "assets/images/aspirin.jpg",
       description:
-          "Aspirin is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+          "Medicine1 is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
     ),
     Medicine(
       id: const Uuid().v4(),
-      name: "Paracetamol",
+      name: "Medicine2",
       price: 10,
       image: "assets/images/paracetamol.jpg",
       description:
-          "Paracetamol is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+          "Medicine2 is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
     ),
     Medicine(
       id: const Uuid().v4(),
-      name: "Aspirin",
+      name: "Medicine1",
       price: 20,
       image: "assets/images/aspirin.jpg",
       description:
-          "Aspirin is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+          "Medicine1 is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
     ),
     Medicine(
       id: const Uuid().v4(),
-      name: "Paracetamol",
+      name: "Medicine2",
       price: 10,
       image: "assets/images/paracetamol.jpg",
       description:
-          "Paracetamol is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+          "Medicine2 is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
     ),
     Medicine(
       id: const Uuid().v4(),
-      name: "Aspirin",
+      name: "Medicine1",
       price: 20,
       image: "assets/images/aspirin.jpg",
       description:
-          "Aspirin is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
+          "Medicine1 is a pain reliever and a fever reducer. It is used to reduce fever and relieve pain. It is used to treat many conditions such as headache, muscle aches, arthritis, back pain, toothaches, colds, and many other conditions.",
     ),
   ];
   static List<Shop> shops = [
